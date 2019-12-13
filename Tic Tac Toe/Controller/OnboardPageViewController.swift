@@ -1,6 +1,6 @@
 //
 //  OnboardPageViewController.swift
-//  Tic Tac Toe
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 11/20/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.
@@ -41,15 +41,6 @@ class OnboardPageViewController: UIPageViewController {
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

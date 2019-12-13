@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Tic Tac Toe
+//  GameViewController.swift
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 1/23/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.
@@ -29,9 +29,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-         State: Tracking where the user is at in the app. The particular screen a user is in, its the "state" the user is in
-         */
         Leanplum.advance(to: "firstGame")
 
         label.isHidden = true
@@ -82,12 +79,7 @@ class GameViewController: UIViewController {
                 
                 label.isHidden = false
                 playAgainButton.isHidden = false
-                
-                /*
-                 Event: When a user completes an action in app, the name of that general action is the 'Event' the user executed.
-                 EX: button clicked, add to cart, purchase
-                 Parameter: Any supplemental information provided on given event
-                 */
+
                 Leanplum.track("gameResult", withParameters: ["winner" : winner])
             }
         }
@@ -105,10 +97,7 @@ class GameViewController: UIViewController {
                 winner = "draw"
                 label.isHidden = false
                 playAgainButton.isHidden = false
-                
-                /*
-                 Event: When a user executes an action, the name of that general action is the 'Event' the user executed
-                */
+
                 Leanplum.track("gameResult", withParameters: ["winner" : winner])
             }
         }
@@ -122,10 +111,7 @@ class GameViewController: UIViewController {
         
         label.isHidden = true
         playAgainButton.isHidden = true
-        
-        /*
-         State: The particular screen a user is in, or as mentioned here the "state" the user is in
-         */
+
         Leanplum.advance(to: "newGame")
         
         for i in 1...9{

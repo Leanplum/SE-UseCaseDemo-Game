@@ -19,6 +19,7 @@
 		25479E812398948E003F29AF /* PurchaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25479E802398948E003F29AF /* PurchaseViewController.swift */; };
 		2582A52F2385F4CD00D98FA9 /* OnboardPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2582A52E2385F4CD00D98FA9 /* OnboardPageViewController.swift */; };
 		25856CAC23A30DD100E8B81B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 25856CAB23A30DD100E8B81B /* README.md */; };
+		25856CB023A30F8B00E8B81B /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25856CAF23A30F8B00E8B81B /* config.swift */; };
 		259028832216363200B3DDFD /* LPMessageTemplates.m in Sources */ = {isa = PBXBuildFile; fileRef = 259028822216363200B3DDFD /* LPMessageTemplates.m */; };
 		25BD1945239713E3003F894A /* Circular Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25BD1944239713E3003F894A /* Circular Book.ttf */; };
 		25BD1946239713E3003F894A /* Circular Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25BD1944239713E3003F894A /* Circular Book.ttf */; };
@@ -67,19 +68,20 @@
 		252B1BF122330F5B0094AB45 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		252B1BF322330F5B0094AB45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2535491A21FFB24800BC1B90 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
-		25462C0D21F9180200AA7BAF /* SE Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SE Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25462C0D21F9180200AA7BAF /* Game Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25462C1021F9180200AA7BAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25462C1221F9180200AA7BAF /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		25462C1721F9180400AA7BAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25462C1A21F9180400AA7BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25462C1C21F9180400AA7BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25462C2121F9180400AA7BAF /* Tic Tac ToeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tic Tac ToeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25462C2121F9180400AA7BAF /* Leanplum Game DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Leanplum Game DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25462C2521F9180400AA7BAF /* Tic_Tac_ToeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tic_Tac_ToeTests.swift; sourceTree = "<group>"; };
 		25462C2721F9180400AA7BAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25462C8D21FAA7CE00AA7BAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		25479E802398948E003F29AF /* PurchaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseViewController.swift; sourceTree = "<group>"; };
 		2582A52E2385F4CD00D98FA9 /* OnboardPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardPageViewController.swift; sourceTree = "<group>"; };
 		25856CAB23A30DD100E8B81B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		25856CAF23A30F8B00E8B81B /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		259028812216363100B3DDFD /* LPMessageTemplates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMessageTemplates.h; sourceTree = "<group>"; };
 		259028822216363200B3DDFD /* LPMessageTemplates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMessageTemplates.m; sourceTree = "<group>"; };
 		259028842216369D00B3DDFD /* Tic Tac Toe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tic Tac Toe-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -147,8 +149,8 @@
 		25462C0E21F9180200AA7BAF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				25462C0D21F9180200AA7BAF /* SE Demo.app */,
-				25462C2121F9180400AA7BAF /* Tic Tac ToeTests.xctest */,
+				25462C0D21F9180200AA7BAF /* Game Demo.app */,
+				25462C2121F9180400AA7BAF /* Leanplum Game DemoTests.xctest */,
 				252B1BEF22330F5B0094AB45 /* RichPush.appex */,
 			);
 			name = Products;
@@ -159,16 +161,11 @@
 			children = (
 				252AC7A922028BB3009E7A61 /* Tic Tac Toe.entitlements */,
 				25462C1021F9180200AA7BAF /* AppDelegate.swift */,
-				2535491A21FFB24800BC1B90 /* LoginViewController.swift */,
-				25E9B97423A19BE5007619A5 /* OnboardViewController.swift */,
-				25462C1221F9180200AA7BAF /* GameViewController.swift */,
-				25F2B73022276FA700476B60 /* SignUpViewController.swift */,
-				2582A52E2385F4CD00D98FA9 /* OnboardPageViewController.swift */,
-				25479E802398948E003F29AF /* PurchaseViewController.swift */,
-				25F2B732222773D000476B60 /* Login.swift */,
+				25856CAD23A30F1B00E8B81B /* Model */,
+				25856CAE23A30F3000E8B81B /* Controller */,
 				25462C8C21FAA7CE00AA7BAF /* Main.storyboard */,
-				25462C1721F9180400AA7BAF /* Assets.xcassets */,
 				25462C1921F9180400AA7BAF /* LaunchScreen.storyboard */,
+				25462C1721F9180400AA7BAF /* Assets.xcassets */,
 				25462C1C21F9180400AA7BAF /* Info.plist */,
 				259028812216363100B3DDFD /* LPMessageTemplates.h */,
 				259028822216363200B3DDFD /* LPMessageTemplates.m */,
@@ -193,6 +190,28 @@
 				25BD1944239713E3003F894A /* Circular Book.ttf */,
 			);
 			path = font;
+			sourceTree = "<group>";
+		};
+		25856CAD23A30F1B00E8B81B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				25F2B732222773D000476B60 /* Login.swift */,
+				25856CAF23A30F8B00E8B81B /* config.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		25856CAE23A30F3000E8B81B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2535491A21FFB24800BC1B90 /* LoginViewController.swift */,
+				25F2B73022276FA700476B60 /* SignUpViewController.swift */,
+				25462C1221F9180200AA7BAF /* GameViewController.swift */,
+				25479E802398948E003F29AF /* PurchaseViewController.swift */,
+				25E9B97423A19BE5007619A5 /* OnboardViewController.swift */,
+				2582A52E2385F4CD00D98FA9 /* OnboardPageViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		33AC8B690A7A1542F86471A8 /* Pods */ = {
@@ -235,9 +254,9 @@
 			productReference = 252B1BEF22330F5B0094AB45 /* RichPush.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		25462C0C21F9180200AA7BAF /* Tic Tac Toe */ = {
+		25462C0C21F9180200AA7BAF /* Leanplum Game Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25462C2A21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Tic Tac Toe" */;
+			buildConfigurationList = 25462C2A21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Leanplum Game Demo" */;
 			buildPhases = (
 				6E37CB59FF164386D4E2DD1F /* [CP] Check Pods Manifest.lock */,
 				25462C0921F9180200AA7BAF /* Sources */,
@@ -251,14 +270,14 @@
 			dependencies = (
 				252B1BF522330F5B0094AB45 /* PBXTargetDependency */,
 			);
-			name = "Tic Tac Toe";
+			name = "Leanplum Game Demo";
 			productName = "Tic Tac Toe";
-			productReference = 25462C0D21F9180200AA7BAF /* SE Demo.app */;
+			productReference = 25462C0D21F9180200AA7BAF /* Game Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		25462C2021F9180400AA7BAF /* Tic Tac ToeTests */ = {
+		25462C2021F9180400AA7BAF /* Leanplum Game DemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 25462C2D21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Tic Tac ToeTests" */;
+			buildConfigurationList = 25462C2D21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Leanplum Game DemoTests" */;
 			buildPhases = (
 				6D54DC381788A5E02FCE0EC9 /* [CP] Check Pods Manifest.lock */,
 				25462C1D21F9180400AA7BAF /* Sources */,
@@ -270,9 +289,9 @@
 			dependencies = (
 				25462C2321F9180400AA7BAF /* PBXTargetDependency */,
 			);
-			name = "Tic Tac ToeTests";
+			name = "Leanplum Game DemoTests";
 			productName = "Tic Tac ToeTests";
-			productReference = 25462C2121F9180400AA7BAF /* Tic Tac ToeTests.xctest */;
+			productReference = 25462C2121F9180400AA7BAF /* Leanplum Game DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -311,7 +330,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 25462C0821F9180200AA7BAF /* Build configuration list for PBXProject "Tic Tac Toe" */;
+			buildConfigurationList = 25462C0821F9180200AA7BAF /* Build configuration list for PBXProject "Leanplum Game Demo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -324,8 +343,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				25462C0C21F9180200AA7BAF /* Tic Tac Toe */,
-				25462C2021F9180400AA7BAF /* Tic Tac ToeTests */,
+				25462C0C21F9180200AA7BAF /* Leanplum Game Demo */,
+				25462C2021F9180400AA7BAF /* Leanplum Game DemoTests */,
 				252B1BEE22330F5B0094AB45 /* RichPush */,
 			);
 		};
@@ -442,6 +461,7 @@
 				2535491B21FFB24800BC1B90 /* LoginViewController.swift in Sources */,
 				25479E812398948E003F29AF /* PurchaseViewController.swift in Sources */,
 				25F2B73122276FA700476B60 /* SignUpViewController.swift in Sources */,
+				25856CB023A30F8B00E8B81B /* config.swift in Sources */,
 				2582A52F2385F4CD00D98FA9 /* OnboardPageViewController.swift in Sources */,
 				25462C1321F9180200AA7BAF /* GameViewController.swift in Sources */,
 				25E9B97523A19BE5007619A5 /* OnboardViewController.swift in Sources */,
@@ -469,7 +489,7 @@
 		};
 		25462C2321F9180400AA7BAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 25462C0C21F9180200AA7BAF /* Tic Tac Toe */;
+			target = 25462C0C21F9180200AA7BAF /* Leanplum Game Demo */;
 			targetProxy = 25462C2221F9180400AA7BAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -668,7 +688,7 @@
 				);
 				OTHER_CFLAGS = "-fembed-bitcode-marker";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leanplum.zach.one.sedemo;
-				PRODUCT_NAME = "SE Demo";
+				PRODUCT_NAME = "Game Demo";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tic Tac Toe/Tic Tac Toe-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -695,7 +715,7 @@
 				);
 				OTHER_CFLAGS = "-fembed-bitcode";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leanplum.zach.one.sedemo;
-				PRODUCT_NAME = "SE Demo";
+				PRODUCT_NAME = "Game Demo";
 				SWIFT_OBJC_BRIDGING_HEADER = "Tic Tac Toe/Tic Tac Toe-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -720,7 +740,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tic Tac Toe.app/Tic Tac Toe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanplum Game Demo.app/Leanplum Game Demo";
 			};
 			name = Debug;
 		};
@@ -742,7 +762,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tic Tac Toe.app/Tic Tac Toe";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Leanplum Game Demo.app/Leanplum Game Demo";
 			};
 			name = Release;
 		};
@@ -758,7 +778,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25462C0821F9180200AA7BAF /* Build configuration list for PBXProject "Tic Tac Toe" */ = {
+		25462C0821F9180200AA7BAF /* Build configuration list for PBXProject "Leanplum Game Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25462C2821F9180400AA7BAF /* Debug */,
@@ -767,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25462C2A21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Tic Tac Toe" */ = {
+		25462C2A21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Leanplum Game Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25462C2B21F9180400AA7BAF /* Debug */,
@@ -776,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		25462C2D21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Tic Tac ToeTests" */ = {
+		25462C2D21F9180400AA7BAF /* Build configuration list for PBXNativeTarget "Leanplum Game DemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				25462C2E21F9180400AA7BAF /* Debug */,
