@@ -1,16 +1,8 @@
-/*
+
 //  AppDelegate.swift
-//  Tic Tac Toe
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created on 1/23/19
-
-
-1. What is an SDK?
-    Software Development Kit
-2. What is the Leanplum SDK
- A wrapper for the Leanplum API that is the driver for all functions you will want to implement with Leanplum.  These functions include capturing OS level device information and delivering messageing and trigger logic to the mobile phone
-
-*/
 
 import UIKit
 import UserNotifications
@@ -21,25 +13,6 @@ import os.log
 #endif
 import Leanplum
 
-/*
-  1. Download the cocoapods, create a Podfile and add the Leanplum SDK to the podfile you created. This can all be completed in the terminal program and you can find more information in our docs on what to include at https://docs.leanplum.com/reference#ios-setup
-  2. Next steps after cocoa pods/Leanplum SDK installed is to import Leanplum into the AppDelegate. Place in the App Delegate so Leanplum is initialized at the same time your app.
-*/
-
-//Leanplum variables: variables in your code that allow you to control data remotely without writing additional code or resubmitting the app
-
-var onboardTrack = LPVar.define("onboard", with: false)
-var LPindex = LPVar.define("LPindex", with: 1 )
-var welcomeText = LPVar.define("welcomeText", with: "Welcome to TicTacToe")
-var userId = LPVar.define("username", with: "")
-var smallPrice = LPVar.define("smallPrice", with: 1.99)
-var largePrice = LPVar.define("largePrice", with: 4.99)
-var btnRadius = LPVar.define("radius", with: 4.0)
-var companyNameTitle = LPVar.define("companyNameTitle", with: "LEANPLUM DEMO")
-var picture1 = LPVar.define("picture1", withFile: "image4.png")
-var picture2 = LPVar.define("picture2", withFile: "image4.png")
-var picture3 = LPVar.define("picture3", withFile: "image4.png")
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -47,15 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let appDev:String = "app_S8Yt8OeAK2Ovgrq0F8Je3S3V8g0U4ar8Cv2E7e9Lgz0"
-        let devDev:String = "dev_308Z1YC7TgWSLlFPvcf3c0WtbazKAwpEegElKcDZe9A"
-        
         #if DEBUG
         Leanplum.setDeviceId(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
-        Leanplum.setAppId(appDev, withDevelopmentKey: devDev)
+        Leanplum.setAppId(appKey, withDevelopmentKey: devKey)
         #else
 
-        //Leanplum.setAppId(appDev, withProductionKey: "prod_EZkrxXnONTH47uKBLr3taZkgTcNUIupgP5sFGMPYzF0")
+        //Leanplum.setAppId(appKey, withProductionKey: prodKey)
         #endif
 
         
@@ -75,11 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Leanplum.setVerboseLoggingInDevelopmentMode(true)
         Leanplum.setAppVersion("1.3.0")
         
-        
         // Starts a new session and updates the app content from Leanplum.
         Leanplum.start()
     
-
         registerForPushNotifications()
         
         return true

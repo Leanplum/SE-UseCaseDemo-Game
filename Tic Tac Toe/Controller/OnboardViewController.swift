@@ -1,6 +1,6 @@
 //
 //  OnboardViewController.swift
-//  Tic Tac Toe
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 12/11/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.

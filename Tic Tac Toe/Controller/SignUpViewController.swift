@@ -1,6 +1,6 @@
 //
-//  SIgnUpViewController.swift
-//  Tic Tac Toe
+//  SignUpViewController.swift
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 2/27/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.
@@ -33,8 +33,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
         usernameField.delegate = self
         emailField.delegate = self
         firstNameField.delegate = self

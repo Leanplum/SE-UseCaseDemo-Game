@@ -1,6 +1,6 @@
 //
 //  Login.swift
-//  Tic Tac Toe
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 2/27/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.

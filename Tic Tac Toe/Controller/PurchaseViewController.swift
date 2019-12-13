@@ -1,6 +1,6 @@
 //
 //  PurchaseViewController.swift
-//  Tic Tac Toe
+//  Leanplum Game Demo - Tic Tac Toe
 //
 //  Created by Zach Owens on 12/4/19.
 //  Copyright © 2019 Zach Owens. All rights reserved.
@@ -71,7 +71,6 @@ class PurchaseViewController: UIViewController {
         } else if largeCreditBtn.isSelected {
             
             Leanplum.track("Purchase", withParameters: ["price" : (largePrice?.doubleValue())!])
-            //Leanplum.setUserAttributes(["Total Credits Purchased": largeCredits])
             incrementUserAttribute(credits: largeCredits, userid: userLogin)
             purchaseBtn.setTitle("Purchase Credits", for: .normal)
             largeCreditBtn.isSelected = false
