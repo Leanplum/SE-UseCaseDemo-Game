@@ -17,6 +17,18 @@ import Leanplum
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var onboardTrack = LPVar.define("onboard", with: false)
+    var LPindex = LPVar.define("LPindex", with: 1 )
+    var welcomeText = LPVar.define("welcomeText", with: "Welcome to TicTacToe")
+    var userId = LPVar.define("username", with: "")
+    var smallPrice = LPVar.define("smallPrice", with: 1.99)
+    var largePrice = LPVar.define("largePrice", with: 4.99)
+    var btnRadius = LPVar.define("radius", with: 4.0)
+    var companyNameTitle = LPVar.define("companyNameTitle", with: "LEANPLUM DEMO")
+    var picture1 = LPVar.define("picture1", withFile: "image4.png")
+    var picture2 = LPVar.define("picture2", withFile: "image4.png")
+    var picture3 = LPVar.define("picture3", withFile: "image4.png")
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         

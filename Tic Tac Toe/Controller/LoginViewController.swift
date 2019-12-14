@@ -18,6 +18,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
+    var onboardTrack = LPVar.define("onboard", with: false)
+    var welcomeText = LPVar.define("welcomeText", with: "Welcome to TicTacToe")
+    var btnRadius = LPVar.define("radius", with: 4.0)
+    var companyNameTitle = LPVar.define("companyNameTitle", with: "LEANPLUM DEMO")
+
+    
     var userLogin: String!
     var password: String!
     var onboard:Bool = false
@@ -30,12 +36,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameField.delegate = self
         emailAddress.delegate = self
 
-        
-        Leanplum.forceContentUpdate()
-        
+
         Leanplum.onVariablesChanged {
             
-            self.onboard = (onboardTrack?.boolValue())!
+            self.onboard = (self.onboardTrack?.boolValue())!
             print("onboard is: \(self.onboard)")
             
             if self.onboard {
@@ -46,8 +50,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
 
-            self.signInButton.layer.cornerRadius = (btnRadius?.cgFloatValue())!
-            self.signUpButton.layer.cornerRadius = (btnRadius?.cgFloatValue())!
+            self.signInButton.layer.cornerRadius = (self.btnRadius?.cgFloatValue())!
+            self.signUpButton.layer.cornerRadius = (self.btnRadius?.cgFloatValue())!
         }
 
     }

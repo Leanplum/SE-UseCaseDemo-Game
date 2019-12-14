@@ -12,6 +12,9 @@ class OnboardPageViewController: UIPageViewController {
     
     var index = 0
 
+    var onboardTrack = LPVar.define("onboard", with: false)
+    var LPindex = LPVar.define("LPindex", with: 1 )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +25,9 @@ class OnboardPageViewController: UIPageViewController {
             print("Onboard Page View")
         }
         
-        Leanplum.onVariablesChanged{
-            self.index = (LPindex?.integerValue())!
-        }
+        Leanplum.onVariablesChanged ({
+            self.index = (self.LPindex?.integerValue())!
+        })
     
     }
     
