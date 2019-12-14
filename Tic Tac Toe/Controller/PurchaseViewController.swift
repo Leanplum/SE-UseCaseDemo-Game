@@ -18,6 +18,12 @@ class PurchaseViewController: UIViewController {
     @IBOutlet weak var smallCreditBtn: UIButton!
     @IBOutlet weak var largeCreditBtn: UIButton!
     
+    var welcomeText = LPVar.define("welcomeText", with: "Welcome to TicTacToe")
+    var userId = LPVar.define("username", with: "")
+    var smallPrice = LPVar.define("smallPrice", with: 1.99)
+    var largePrice = LPVar.define("largePrice", with: 4.99)
+    var btnRadius = LPVar.define("radius", with: 4.0)
+    
     var smallCredits = 3
     var largeCredits = 6
     var userLogin = ""
@@ -29,15 +35,15 @@ class PurchaseViewController: UIViewController {
         
         Leanplum.onVariablesChanged {
             
-            self.userLogin = (userId?.stringValue)!
-            self.smallPriceLabel.text = "\(self.smallCredits) credits $\((smallPrice?.doubleValue())!)"
-            self.largePriceLabel.text = "\(self.largeCredits) credits $\((largePrice?.doubleValue())!)"
+            self.userLogin = self.userId?.stringValue ?? "none"
+            self.smallPriceLabel.text = "\(self.smallCredits) credits $\((self.smallPrice?.doubleValue())!)"
+            self.largePriceLabel.text = "\(self.largeCredits) credits $\((self.largePrice?.doubleValue())!)"
             
-            self.purchaseBtn.layer.cornerRadius = (btnRadius?.cgFloatValue())!
-            self.backToGame.layer.cornerRadius = (btnRadius?.cgFloatValue())!
+            self.purchaseBtn.layer.cornerRadius = (self.btnRadius?.cgFloatValue())!
+            self.backToGame.layer.cornerRadius = (self.btnRadius?.cgFloatValue())!
             
         }
-        
+                
     }
     
     @IBAction func smallCreditBtn(_ sender: UIButton) {

@@ -22,6 +22,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var otherField: UITextField!
     
     @IBOutlet weak var submitButton: UIButton!
+
     
     var username:String!
     var email: String!
