@@ -30,8 +30,8 @@ class OnboardViewController: UIViewController {
         Leanplum.onVariablesChanged({
                         
             self.screenOnePic?.image = self.picture1?.imageValue()
-            self.screenTwoPic?.image = self.picture1?.imageValue()
-            self.screenThreePic?.image = self.picture1?.imageValue()
+            self.screenTwoPic?.image = self.picture2?.imageValue()
+            self.screenThreePic?.image = self.picture3?.imageValue()
             
             self.titleLabel.text = (self.companyNameTitle?.stringValue!)
 
