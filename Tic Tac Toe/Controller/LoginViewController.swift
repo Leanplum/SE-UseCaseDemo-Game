@@ -72,12 +72,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
         if (userLogin.isEmpty == false && password.isEmpty == false) {
 
-            
             Leanplum.setUserId(userLogin)
             Leanplum.forceContentUpdate()
             
             print("Login is Successful: \(userLogin)")
-            
             performSegue(withIdentifier: "gameSegue", sender: nil)
             
         }

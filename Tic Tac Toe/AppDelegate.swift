@@ -101,6 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
     
+
     func registerForPushNotifications() {
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound, .badge]) {
@@ -126,8 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
         ) {
-        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
-        let token = tokenParts.joined()
+        //let tokenParts = deviceToken.map { String(format: "%02x", $0) }.joined()
+        let token = deviceToken.map { String(format: "%02x", $0) }.joined()
         print("Device Token: \(token)")
     }
     
@@ -142,6 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         completionHandler(.newData)
     }
+ 
     
 
 }

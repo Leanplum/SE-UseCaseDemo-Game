@@ -77,12 +77,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         else {
             
             Leanplum.setUserId(username)
-            Leanplum.setUserAttributes(["email" : email!, "firstName": firstName!, "lastName": lastName!, "age":age!, "other":other!] )
+            Leanplum.setUserAttributes(["email" : email!, "firstName": firstName!, "lastName": lastName!, "age": age!, "other": other!] )
             
-            Leanplum.forceContentUpdate()
+            Leanplum.track("Registered")
             
             let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeViewController") as! LoginViewController
             if let vc = UIApplication.shared.keyWindow?.rootViewController {
+                Leanplum.forceContentUpdate()
                 vc.show(loginVC, sender: (Any).self)
             }
             
