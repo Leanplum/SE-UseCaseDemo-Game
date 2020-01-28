@@ -53,14 +53,14 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
-		<key>Pods-Tic Tac Toe.xcscheme</key>
+		<key>Pods-Leanplum Game Demo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>8</integer>
 		</dict>
-		<key>Pods-Tic Tac ToeTests.xcscheme</key>
+		<key>Pods-Leanplum Game DemoTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

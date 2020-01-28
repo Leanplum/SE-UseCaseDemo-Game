@@ -45,7 +45,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
-  - Leanplum-iOS-SDK (2.6.2)
+  - Leanplum-iOS-SDK (2.6.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -54,7 +54,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Analytics
-  - Leanplum-iOS-SDK (= 2.6.2)
+  - Leanplum-iOS-SDK (= 2.6.4)
 
 SPEC REPOS:
   trunk:
@@ -74,9 +74,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: bd6fc5a258884e206fd5c474ebe4f5b00e21770e
   GoogleAppMeasurement: 6cf307834da065863f9faf4c0de0a936d81dd832
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
-  Leanplum-iOS-SDK: 8ca2b882407802d6046a547f4fa08d3ddc795edf
+  Leanplum-iOS-SDK: a8f97c7cab22e95a6ff7724cf7f9976b9aae8b51
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 460a0dfd3b27804ceaa77eddad0f6b39c78570b4
+PODFILE CHECKSUM: 07e49600eec977b5bad0d685ec43ee6f7fbff6a5
 
 COCOAPODS: 1.8.4
