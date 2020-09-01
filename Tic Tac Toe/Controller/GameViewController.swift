@@ -125,6 +125,13 @@ class GameViewController: UIViewController {
         performSegue(withIdentifier: "purchaseSegue", sender: nil)
     }
     
+    @IBAction func logOutBtn(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "purchaseSegue" {

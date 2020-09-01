@@ -7,10 +7,7 @@
 import UIKit
 import UserNotifications
 import os.log
-
-#if DEBUG
-    import AdSupport
-#endif
+import AdSupport
 import Leanplum
 
 @UIApplicationMain
@@ -32,11 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        #if DEBUG
         Leanplum.setDeviceId(ASIdentifierManager.shared().advertisingIdentifier.uuidString)
         Leanplum.setAppId(appKey, withDevelopmentKey: devKey)
+        
+        #if DEBUG
+        
         #else
-
+        
         //Leanplum.setAppId(appKey, withProductionKey: prodKey)
         #endif
 
@@ -60,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Starts a new session and updates the app content from Leanplum.
         Leanplum.start()
     
+
         registerForPushNotifications()
         
         return true

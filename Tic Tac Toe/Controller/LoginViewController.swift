@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AdSupport
 import Leanplum
 import os.log
 
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var onboard:Bool = false
     
     var login: Login?
+    var appDelegate: AppDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,15 +71,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userLogin = usernameField.text
         password = emailAddress.text
 
-    
+
         if (userLogin.isEmpty == false && password.isEmpty == false) {
 
             Leanplum.setUserId(userLogin)
+            //setDeviceAttributes()
             Leanplum.forceContentUpdate()
             
             print("Login is Successful: \(userLogin)")
-            performSegue(withIdentifier: "gameSegue", sender: nil)
-            
+            showGameVC()
+
         }
         else if (userLogin.isEmpty || password.isEmpty) {
             let alert = UIAlertController(title: "Sign In", message: "All Fields Are Required", preferredStyle: UIAlertController.Style.alert)
@@ -95,8 +98,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
 
         print("LoginViewController")
-        
+    
     }
+    
     
     @IBAction func regButton(_ sender: Any) {
         
@@ -118,6 +122,56 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    func setDeviceAttributes() {
+        
+        
+        /*
+        let rf = LPRequestFactory.init(featureFlagManager: LPFeatureFlagManager.shared())
+        // set the token
+
+        let tokenKey = Leanplum.push
+        
+        print(tokenKey)
+        
+        let existingToken = UserDefaults.standard.string(forKey: tokenKey!)
+        
+        // set the device name
+        let deviceName = UIDevice.current.name
+        var params:[AnyHashable:Any]
+        
+        // set setDeviceAttributes request
+        if deviceName != nil {
+            params = [LP_PARAM_DEVICE_NAME: deviceName, LP_PARAM_DEVICE_PUSH_TOKEN: existingToken]
+            
+            let request = rf.setDeviceAttributesWithParams(params)
+            LPRequestSender.sharedInstance()?.send(request)
+        }
+    */
+        
+        let rf = LPRequestFactory.init(featureFlagManager: LPFeatureFlagManager.shared())
+            // set the token
+            let tokenKey = Leanplum.pushTokenKey()
+            let existingToken = UserDefaults.standard.string(forKey: tokenKey!)
+            let deviceName = UIDevice.current.name
+            let deviceId = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+        
+            var params:[AnyHashable:Any]
+        
+            if let t = existingToken {
+                params = [LP_PARAM_DEVICE_PUSH_TOKEN: t, LP_PARAM_DEVICE_NAME: deviceName, LP_PARAM_DEVICE_ID: deviceId]
+
+                let request = rf.setDeviceAttributesWithParams(params)
+                LPRequestSender.sharedInstance()?.send(request)
+            }
+        }
+
+    func showGameVC() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let gameVC = storyboard.instantiateViewController(withIdentifier: "gameVC")
+        
+        show(gameVC, sender: self)
+    }
 
 }
 

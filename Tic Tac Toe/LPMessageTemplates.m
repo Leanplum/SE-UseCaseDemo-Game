@@ -43,6 +43,7 @@
 #define LPMT_WEB_INTERSTITIAL_NAME @"Web Interstitial"
 #define LPMT_OPEN_URL_NAME @"Open URL"
 
+
 #define LPMT_ARG_TITLE @"Title"
 #define LPMT_ARG_MESSAGE @"Message"
 #define LPMT_ARG_URL @"URL"
@@ -291,16 +292,23 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
                          UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString([context stringNamed:LPMT_ARG_TITLE], nil) message:NSLocalizedString([context stringNamed:LPMT_ARG_MESSAGE], nil) preferredStyle:UIAlertControllerStyleAlert];
                          
                          UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString([context stringNamed:LPMT_ARG_CANCEL_TEXT], nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                             
+                             LPActionContext *context = _contexts.lastObject;
+                             [context trackMessageEvent:@"Cancel Z" withValue:0.0 andInfo:nil andParameters:nil];
                              [self alertDismissedWithButtonIndex:0];
                          }];
                          [alert addAction:cancel];
                          UIAlertAction *accept = [UIAlertAction actionWithTitle:NSLocalizedString([context stringNamed:LPMT_ARG_ACCEPT_TEXT], nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                             LPActionContext *context = _contexts.lastObject;
+                             [context trackMessageEvent:@"Accept" withValue:0.0 andInfo:nil andParameters:nil];
                              [self alertDismissedWithButtonIndex:1];
                          }];
                          [alert addAction:accept];
                          
                          // Adding the AlertAction for Maybe button
                          UIAlertAction *maybe = [UIAlertAction actionWithTitle:NSLocalizedString([context stringNamed:LPMT_ARG_MAYBE_TEXT], nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                             LPActionContext *context = _contexts.lastObject;
+                             [context trackMessageEvent:@"Maybe" withValue:0.0 andInfo:nil andParameters:nil];
                              [self alertDismissedWithButtonIndex:0];
                          }];
                          [alert addAction:maybe];
@@ -501,6 +509,19 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
                  }
              }];
     
+    [Leanplum defineAction:LPMT_APP_TEST_NAME
+                    ofKind:kLeanplumActionKindAction withArguments:@[]
+             withResponder:^BOOL(LPActionContext *context) {
+                 @try {
+                     [self appStorePrompt];
+                     return YES;
+                 }
+                 @catch (NSException *exception) {
+                     LOG_LP_MESSAGE_EXCEPTION;
+                 }
+                 return NO;
+             }];
+    
     [Leanplum addVariablesChangedResponder:self withSelector:@selector(refreshPopupContent)];
 #endif
 }
@@ -575,6 +596,8 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
     UIGraphicsEndImageContext();
     return img;
 }
+
+
 
 // Displays the Center Popup, Interstitial and Web Interstitial.
 - (void)showPopup
@@ -760,7 +783,7 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
 
 - (void)dismiss
 {
-    [self closePopup:YES withAction:LPMT_ARG_CANCEL_ACTION trackAction:NO];
+    [self closePopup:YES withAction:LPMT_ARG_CANCEL_ACTION trackAction:YES];
 }
 
 - (void)enablePush
