@@ -77,7 +77,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         else {
             
             Leanplum.setUserId(username)
+            
             Leanplum.setUserAttributes(["email" : email!, "firstName": firstName!, "lastName": lastName!, "age": age!, "other": other!] )
+            
             
             Leanplum.track("Registered")
             

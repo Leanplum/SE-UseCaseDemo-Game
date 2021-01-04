@@ -35,7 +35,7 @@
 #define LPMT_ALERT_NAME @"Alert"
 #define LPMT_CONFIRM_NAME @"Confirm"
 // #### example: Adding the "3-button Confirm" name
-#define LPMT_3_BUTTON_CONFIRM_NAME @"3-button Confirm"
+#define LPMT_3_BUTTON_CONFIRM_NAME @"Custom Template - 3-button Confirm"
 #define LPMT_PUSH_ASK_TO_ASK @"Push Ask to Ask"
 #define LPMT_REGISTER_FOR_PUSH @"Register For Push"
 #define LPMT_CENTER_POPUP_NAME @"Center Popup"
@@ -46,6 +46,7 @@
 
 #define LPMT_ARG_TITLE @"Title"
 #define LPMT_ARG_MESSAGE @"Message"
+#define LPMT_ARG_CUSTOM_URL @"Custom URL to Pass"
 #define LPMT_ARG_URL @"URL"
 #define LPMT_ARG_URL_CLOSE @"Close URL"
 #define LPMT_ARG_DISMISS_ACTION @"Dismiss action"
@@ -76,6 +77,7 @@
 
 #define LPMT_DEFAULT_ALERT_MESSAGE @"Alert message goes here."
 #define LPMT_DEFAULT_CONFIRM_MESSAGE @"Confirmation message goes here."
+#define LPMT_CUSTOM_URL_MESSAGE @"Custom URL goes here"
 #define LPMT_DEFAULT_ASK_TO_ASK_MESSAGE @"Tap OK to receive important notifications from our app."
 #define LPMT_DEFAULT_POPUP_MESSAGE @"Popup message goes here."
 #define LPMT_DEFAULT_INTERSTITIAL_MESSAGE @"Interstitial message goes here."
@@ -276,6 +278,7 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
              withArguments:@[
                              [LPActionArg argNamed:LPMT_ARG_TITLE withString:APP_NAME],
                              [LPActionArg argNamed:LPMT_ARG_MESSAGE withString:LPMT_DEFAULT_CONFIRM_MESSAGE],
+                             [LPActionArg argNamed:LPMT_ARG_CUSTOM_URL withString:LPMT_CUSTOM_URL_MESSAGE],
                              [LPActionArg argNamed:LPMT_ARG_ACCEPT_TEXT withString:LPMT_DEFAULT_YES_BUTTON_TEXT],
                              [LPActionArg argNamed:LPMT_ARG_CANCEL_TEXT withString:LPMT_DEFAULT_NO_BUTTON_TEXT],
                              // adding the Maybe button text
@@ -294,7 +297,7 @@ static NSString *DEFAULTS_LEANPLUM_ENABLED_PUSH = @"__Leanplum_enabled_push";
                          UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString([context stringNamed:LPMT_ARG_CANCEL_TEXT], nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                              
                              LPActionContext *context = _contexts.lastObject;
-                             [context trackMessageEvent:@"Cancel Z" withValue:0.0 andInfo:nil andParameters:nil];
+                             [context trackMessageEvent:@"Cancel" withValue:0.0 andInfo:nil andParameters:nil];
                              [self alertDismissedWithButtonIndex:0];
                          }];
                          [alert addAction:cancel];
